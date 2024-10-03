@@ -28,9 +28,26 @@ const updateTheme = () => {
   }
 };
 
+const checkSystemPreference = () => {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+};
+
 onMounted(() => {
-  isDark.value = localStorage.getItem('theme') === 'dark';
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    isDark.value = savedTheme === 'dark';
+  } else {
+    isDark.value = checkSystemPreference();
+  }
   updateTheme();
+
+  // Listen for system preference changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      isDark.value = e.matches;
+      updateTheme();
+    }
+  });
 });
 
 watch(isDark, updateTheme);

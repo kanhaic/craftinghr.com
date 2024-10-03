@@ -9,7 +9,7 @@
         </div>
 
         <div class="hidden md:flex flex-grow items-center justify-center">
-          <nav class="space-x-8">
+          <nav class="flex-1 flex justify-center space-x-8">
             <a
               v-for="item in navItems"
               :key="item.href"
