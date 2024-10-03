@@ -6,10 +6,12 @@
         <p class="mt-4 text-lg leading-8 text-gray-600">{{ subtitle }}</p>
       </div>
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-        <div v-for="member in teamMembers" :key="member.name" class="flex flex-col sm:flex-row sm:items-center">
-          <img class="object-cover w-48 rounded-2xl -rotate-3" :src="member.image" :alt="member.name" />
+        <div v-for="member in teamMembers" :key="member.name" class="flex flex-col items-center sm:flex-row sm:items-start">
+          <div class="w-full sm:w-48 flex justify-center sm:justify-start sm:flex-shrink-0">
+            <img class="object-cover w-48 h-48 rounded-2xl -rotate-3" :src="member.image" :alt="member.name" />
+          </div>
 
-          <div class="mt-8 sm:mt-0 sm:ml-10">
+          <div class="mt-8 sm:mt-0 sm:ml-10 text-center sm:text-left">
             <p class="text-4xl font-semibold tracking-tight text-gray-900">{{ member.name }}</p>
             <p class="mt-3 text-xs font-semibold tracking-widest text-gray-900 uppercase">{{ member.title }}</p>
             <p class="mt-8 text-base font-normal text-gray-600">{{ member.description }}</p>
