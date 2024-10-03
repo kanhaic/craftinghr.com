@@ -17,6 +17,7 @@
       :title="productsTitle"
       :subtitle="productsSubtitle"
       :products="products"
+      id="products"
     />
     <Team
       id="team"
