@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-900">
+  <div class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
     <TheHeader
       :logo-src="logoSrc"
       :company-name="companyName"
@@ -108,3 +108,11 @@ const contactSubtitle =
 const contactCTAText = "Contact Us";
 const contactEmail = "info@craftinghr.com";
 </script>
+
+<style>
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Add any global styles here */
+</style>
