@@ -61,14 +61,14 @@ const products = [
     name: "EasyHR",
     description:
       "Easy HR is simple & intuitive HR Software for SME & Enterprise. It provides HRIS records, leaves & attendance, Payroll, expenses, travel making it very easy to manage.",
-    link: "https://easyhrworld.com",
+    href: "https://easyhrworld.com",
     logo: "/easyhr-logo.png", // Make sure this path is correct
   },
   {
     name: "EazyRoute",
     description:
       "EazyRoute is a field service management software that helps businesses manage their field sales, route optimization, and customer management.",
-    link: "https://eazyroute.app",
+    href: "https://eazyroute.app",
     logo: "/eazyroute-logo.png", // Make sure this path is correct
   },
 ];
@@ -108,11 +108,3 @@ const contactSubtitle =
 const contactCTAText = "Contact Us";
 const contactEmail = "info@craftinghr.com";
 </script>
-
-<style>
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-/* Add any global styles here */
-</style>
