@@ -14,7 +14,7 @@
             </div>
             <div class="relative flex flex-col bg-white py-6 px-6 rounded-lg shadow-md dark:bg-gray-800">
               <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-white">
-                <img :src="product.logo" :alt="product.name" class="h-8 w-8" />
+                <img :src="product.logo" :alt="product.name" class="h-10" />
                 {{ product.name }}
               </dt>
               <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-400">
