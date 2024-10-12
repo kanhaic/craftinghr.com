@@ -20,7 +20,7 @@
               <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-400">
                 <p class="flex-auto">{{ product.description }}</p>
                 <p class="mt-6">
-                  <a :href="product.href" class="text-sm font-semibold leading-6 text-indigo-600 dark:text-blue-400">Learn more <span aria-hidden="true">→</span></a>
+                  <a :href="product.href" target="_blank" class="text-sm font-semibold leading-6 text-indigo-600 dark:text-blue-400">Learn more <span aria-hidden="true">→</span></a>
                 </p>
               </dd>
             </div>
