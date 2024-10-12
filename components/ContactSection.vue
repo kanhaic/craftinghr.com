@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative py-12 overflow-hidden bg-white dark:bg-black sm:py-16 lg:py-20 xl:py-24 border-gray-200 dark:border-gray-800"
+    class="relative py-12 overflow-hidden bg-white dark:bg-gray-900 sm:py-16 lg:py-20 xl:py-24 border-gray-200 dark:border-gray-800"
   >
     <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="max-w-sm mx-auto text-center">
@@ -18,7 +18,7 @@
       </div>
 
       <div
-        class="grid max-w-md grid-cols-1 mx-auto mt-8 overflow-hidden text-center bg-white dark:bg-black border border-gray-200 dark:border-gray-800 bg-opacity-80 md:text-left sm:mt-12 lg:mt-16 md:grid-cols-3 rounded-xl filter backdrop-blur-lg md:max-w-none md:mx-0"
+        class="grid max-w-md grid-cols-1 mx-auto mt-8 overflow-hidden text-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 bg-opacity-80 md:text-left sm:mt-12 lg:mt-16 md:grid-cols-3 rounded-xl filter backdrop-blur-lg md:max-w-none md:mx-0"
       >
         <div class="">
           <div class="p-8 lg:p-12 xl:p-16">
