@@ -1,19 +1,17 @@
 {
-  "name": "nuxt-app",
+  "name": "craftinghr",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@nuxtjs/sitemap": "^6.1.1",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "nuxt": "^3.13.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "@astrojs/sitemap": "^3.4.0",
+    "@tailwindcss/vite": "^4.1.0",
+    "astro": "^5.0.0",
+    "tailwindcss": "^4.1.0"
   }
 }

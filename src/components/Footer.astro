@@ -1,0 +1,26 @@
+---
+const { companyName } = Astro.props as { companyName: string };
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="overflow-hidden bg-ink text-paper">
+  <div
+    class="mx-auto flex max-w-6xl flex-col gap-3 border-t border-paper/15 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8"
+  >
+    <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
+      &copy; {currentYear} {companyName}
+    </p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
+      Made in Mumbai <span class="text-clay">✳</span>
+    </p>
+  </div>
+
+  <div class="pointer-events-none select-none" aria-hidden="true">
+    <p
+      class="-mb-[0.36em] whitespace-nowrap text-center font-display text-[19vw] font-medium leading-none tracking-tight text-paper/[0.06]"
+    >
+      CraftingHR
+    </p>
+  </div>
+</footer>

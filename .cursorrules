@@ -1,4 +1,4 @@
-This project is using nuxtjs v3 and tailwindcss.
-generate the code only in vuejs using composition api
-use only tailwind css for styling
+This project is using Astro with Tailwind CSS v4 (CSS-first config in src/styles/global.css).
+Generate components as .astro files; use inline <script> tags only when client-side JS is required.
+Use only Tailwind CSS for styling.
 It is a landing page for craftinghr.com.

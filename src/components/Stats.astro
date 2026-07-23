@@ -1,0 +1,44 @@
+---
+interface Stat {
+  id: number;
+  name: string;
+  value: string;
+}
+
+const { title, subtitle, stats } = Astro.props as {
+  title: string;
+  subtitle: string;
+  stats: Stat[];
+};
+---
+
+<section class="border-b border-ink/10 bg-ink text-paper">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+    <div class="reveal flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <h2 class="max-w-md font-display text-3xl font-medium tracking-tight sm:text-4xl">
+        {title}
+      </h2>
+      <p class="max-w-sm font-mono text-[11px] uppercase leading-relaxed tracking-[0.18em] text-paper/50">
+        {subtitle}
+      </p>
+    </div>
+
+    <dl
+      class="reveal mt-14 grid grid-cols-1 divide-y divide-paper/15 border-y border-paper/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+    >
+      {
+        stats.map((stat, i) => (
+          <div class:list={['flex flex-col gap-3 py-10 sm:px-8', i === 0 && 'sm:pl-0']}>
+            <dd class="order-first font-display text-5xl font-light tracking-tight sm:text-6xl">
+              {stat.value}
+            </dd>
+            <dt class="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
+              <span class="text-clay">—</span>
+              {stat.name}
+            </dt>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

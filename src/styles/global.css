@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f6f1e7;
+  --color-paper-deep: #ede6d6;
+  --color-ink: #1b1712;
+  --color-ink-soft: #5c544a;
+  --color-clay: #bc4b14;
+  --color-clay-deep: #9a3b0e;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --animate-spin-slow: spin-slow 28s linear infinite;
+
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #bc4b14;
+  color: #f6f1e7;
+}
+
+/* Paper grain over the whole page */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Staggered entrance for the hero */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.25s; }
+.rise-4 { animation-delay: 0.35s; }
+
+/* Scroll-triggered reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

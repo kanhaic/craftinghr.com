@@ -1,0 +1,88 @@
+---
+interface NavItem {
+  text: string;
+  href: string;
+}
+
+const { navItems } = Astro.props as { navItems: NavItem[] };
+---
+
+<header class="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 backdrop-blur-sm">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8 lg:h-[72px]">
+    <a href="/" class="flex items-center">
+      <img class="h-10 w-auto" src="/logo.png" alt="CraftingHR" />
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      {
+        navItems.map((item, i) => (
+          <a
+            href={item.href}
+            class="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft transition-colors duration-200 hover:text-ink"
+          >
+            <span class="text-clay">0{i + 1}</span>
+            {item.text}
+          </a>
+        ))
+      }
+      <a
+        href="mailto:info@craftinghr.com"
+        class="border border-ink px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors duration-200 hover:bg-ink hover:text-paper"
+      >
+        Get in touch
+      </a>
+    </nav>
+
+    <button id="menu-toggle" class="p-2 text-ink md:hidden" aria-label="Toggle menu">
+      <svg id="menu-icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+      <svg id="menu-icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-width="1.5" d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-ink/10 md:hidden">
+    <nav class="space-y-1 px-5 py-4">
+      {
+        navItems.map((item, i) => (
+          <a
+            href={item.href}
+            class="mobile-menu-link block py-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-soft hover:text-ink"
+          >
+            <span class="text-clay">0{i + 1}</span>
+            {item.text}
+          </a>
+        ))
+      }
+      <a
+        href="mailto:info@craftinghr.com"
+        class="mobile-menu-link block py-2 font-mono text-xs uppercase tracking-[0.18em] text-clay"
+      >
+        Get in touch
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  const setMenu = (open: boolean) => {
+    menu?.classList.toggle('hidden', !open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+  };
+
+  toggle?.addEventListener('click', () => {
+    setMenu(menu?.classList.contains('hidden') ?? false);
+  });
+
+  document.querySelectorAll('.mobile-menu-link').forEach((link) => {
+    link.addEventListener('click', () => setMenu(false));
+  });
+</script>

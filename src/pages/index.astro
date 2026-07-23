@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Products from '../components/Products.astro';
+import Team from '../components/Team.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+const companyName = 'CraftingHR Software Solutions LLP';
+const navItems = [
+  { text: 'Products', href: '#products' },
+  { text: 'Team', href: '#team' },
+  { text: 'Contact', href: '#contact' },
+];
+
+const hero = {
+  titleLead: 'Software for the',
+  titleAccent: 'people side',
+  titleTail: 'of business.',
+  subtitle:
+    'We build focused, dependable tools for HR, field sales, and finance teams — helping SMEs and enterprises run the everyday work of the company, without the clutter.',
+  ctaText: 'Explore our products',
+};
+
+const statsTitle = 'Trusted by enterprises worldwide.';
+const statsSubtitle = 'Empowering businesses with efficient HR and sales solutions';
+const stats = [
+  { id: 1, name: 'Enterprises served', value: '2,000+' },
+  { id: 2, name: 'Employees served', value: '100,000+' },
+  { id: 3, name: 'Team efficiency increase', value: '40%' },
+];
+
+const products = [
+  {
+    name: 'EasyHR',
+    description:
+      'Easy HR is simple & intuitive HR software for SME & Enterprise. It provides HRIS records, leaves & attendance, payroll, expenses, and travel — making it very easy to manage.',
+    href: 'https://easyhr.app',
+    logo: '/easyhr-logo.png',
+  },
+  {
+    name: 'EazyRoute',
+    description:
+      'EazyRoute is a field service management software that helps businesses manage their field sales, route optimization, and customer management.',
+    href: 'https://eazyroute.app',
+    logo: '/eazyroute-logo.png',
+  },
+  {
+    name: 'Smart Bills',
+    description:
+      'Smart Bills uses AI to extract invoice data automatically, giving businesses a clear, searchable dashboard with easy reporting and integrations.',
+    href: 'https://smartbills.app',
+    logo: 'https://smartbills.app/logo.svg',
+  },
+];
+
+const teamMembers = [
+  {
+    name: 'Shripal Shah',
+    title: 'Co-Founder, CEO',
+    description:
+      'Shripal brings over a decade of experience in IT and services. With an Engineering degree and MBA from Mumbai University, he excels in Business Process Management, Project Management, and Innovation across various sectors.',
+    image: '/shripal-shah.jpg',
+    linkedIn: 'https://www.linkedin.com/in/shripalshah125',
+  },
+  {
+    name: 'Kanhai Chhugani',
+    title: 'Co-Founder, CTO',
+    description:
+      'Kanhai is a technology executive with a proven track record in developing and delivering technology-based products. He excels in product management, leading multinational development teams, and crafting product roadmaps.',
+    image: '/kanhai-chhugani.webp',
+    linkedIn: 'https://www.linkedin.com/in/kanhaic',
+  },
+];
+---
+
+<Layout>
+  <Header navItems={navItems} />
+  <main>
+    <Hero {...hero} />
+    <Stats title={statsTitle} subtitle={statsSubtitle} stats={stats} />
+    <Products
+      preTitle="01 — Products"
+      title="Three tools, one craft."
+      subtitle="Each product does one job properly — and stays out of your way."
+      products={products}
+    />
+    <Team
+      preTitle="02 — Team"
+      title="The people behind the products."
+      subtitle="Founder-led, hands-on, and still shipping."
+      teamMembers={teamMembers}
+    />
+    <Contact
+      preTitle="03 — Contact"
+      title="Let's talk."
+      subtitle="Questions about a product, a demo, or a partnership — we'd love to hear from you."
+      email="info@craftinghr.com"
+    />
+  </main>
+  <Footer companyName={companyName} />
+</Layout>

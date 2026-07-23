@@ -1,0 +1,67 @@
+---
+const { preTitle, title, subtitle, email } = Astro.props as {
+  preTitle: string;
+  title: string;
+  subtitle: string;
+  email: string;
+};
+---
+
+<section id="contact" class="bg-ink text-paper">
+  <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <div class="reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-paper/50 sm:text-xs">
+        <span class="text-clay">(</span>
+        {preTitle}
+        <span class="text-clay">)</span>
+      </p>
+      <h2 class="mt-6 font-display text-5xl font-medium tracking-tight sm:text-7xl">
+        {title}
+      </h2>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-paper/60">
+        {subtitle}
+      </p>
+      <a
+        href={`mailto:${email}`}
+        class="group mt-10 inline-flex items-center gap-3 font-display text-2xl italic text-paper underline decoration-paper/30 underline-offset-8 transition-colors duration-200 hover:text-clay hover:decoration-clay sm:text-4xl"
+      >
+        {email}
+        <span class="not-italic transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+      </a>
+    </div>
+
+    <div
+      class="reveal mt-16 grid grid-cols-1 divide-y divide-paper/15 border-y border-paper/15 md:grid-cols-3 md:divide-x md:divide-y-0"
+    >
+      <div class="py-8 md:pr-8">
+        <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
+          <span class="text-clay">—</span> Email
+        </p>
+        <a href={`mailto:${email}`} class="mt-3 block text-base text-paper/80 transition-colors hover:text-paper">
+          {email}
+        </a>
+      </div>
+      <div class="py-8 md:px-8">
+        <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
+          <span class="text-clay">—</span> Phone
+        </p>
+        <a href="tel:+919930205985" class="mt-3 block text-base text-paper/80 transition-colors hover:text-paper">
+          +91 99302 05985
+        </a>
+      </div>
+      <div class="py-8 md:pl-8">
+        <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/50">
+          <span class="text-clay">—</span> India — HQ
+        </p>
+        <a
+          href="https://maps.app.goo.gl/RxgwJgq4JWWKWtav7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-3 block text-base leading-relaxed text-paper/80 transition-colors hover:text-paper"
+        >
+          C-319, Kailash Esplanade, LBS Marg, Ghatkopar (West), Mumbai – 400086
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

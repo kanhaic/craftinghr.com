@@ -1,0 +1,71 @@
+---
+interface TeamMember {
+  name: string;
+  title: string;
+  description: string;
+  image: string;
+  linkedIn: string;
+}
+
+const { preTitle, title, subtitle, teamMembers } = Astro.props as {
+  preTitle: string;
+  title: string;
+  subtitle: string;
+  teamMembers: TeamMember[];
+};
+---
+
+<section id="team" class="border-b border-ink/10">
+  <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <div class="reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-soft sm:text-xs">
+        <span class="text-clay">(</span>
+        {preTitle}
+        <span class="text-clay">)</span>
+      </p>
+      <div class="mt-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <h2 class="font-display text-4xl font-medium tracking-tight sm:text-5xl">
+          {title}
+        </h2>
+        <p class="max-w-sm text-base leading-relaxed text-ink-soft">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="reveal mt-14 grid grid-cols-1 divide-y divide-ink/10 border border-ink/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
+    >
+      {
+        teamMembers.map((member) => (
+          <article class="group p-8 lg:p-10">
+            <div class="flex items-start justify-between gap-6">
+              <img
+                class="h-28 w-28 border border-ink/10 object-cover grayscale transition-all duration-500 group-hover:grayscale-0 sm:h-32 sm:w-32"
+                src={member.image}
+                alt={member.name}
+              />
+              <span class="font-display text-3xl text-clay" aria-hidden="true">
+                ✳
+              </span>
+            </div>
+            <h3 class="mt-8 font-display text-3xl font-medium tracking-tight">{member.name}</h3>
+            <p class="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-clay">{member.title}</p>
+            <p class="mt-5 text-base leading-relaxed text-ink-soft">{member.description}</p>
+            <a
+              href={member.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group/link mt-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink underline decoration-ink/30 underline-offset-8 transition-colors duration-200 hover:text-clay hover:decoration-clay"
+            >
+              LinkedIn
+              <span class="transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5">
+                ↗
+              </span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

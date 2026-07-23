@@ -1,0 +1,63 @@
+---
+interface Product {
+  name: string;
+  description: string;
+  href: string;
+  logo: string;
+}
+
+const { preTitle, title, subtitle, products } = Astro.props as {
+  preTitle: string;
+  title: string;
+  subtitle: string;
+  products: Product[];
+};
+
+const hostname = (href: string) => new URL(href).hostname;
+---
+
+<section id="products" class="border-b border-ink/10">
+  <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <div class="reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-soft sm:text-xs">
+        <span class="text-clay">(</span>
+        {preTitle}
+        <span class="text-clay">)</span>
+      </p>
+      <div class="mt-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <h2 class="font-display text-4xl font-medium tracking-tight sm:text-5xl">
+          {title}
+        </h2>
+        <p class="max-w-sm text-base leading-relaxed text-ink-soft">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="reveal mt-14 grid grid-cols-1 divide-y divide-ink/10 border border-ink/10 md:grid-cols-3 md:divide-x md:divide-y-0"
+    >
+      {
+        products.map((product, i) => (
+          <a
+            href={product.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex flex-col p-8 transition-colors duration-300 hover:bg-paper-deep lg:p-10"
+          >
+            <span class="font-mono text-xs tracking-[0.2em] text-clay">0{i + 1}</span>
+            <img src={product.logo} alt={`${product.name} logo`} class="mt-10 h-10 w-auto self-start" />
+            <h3 class="mt-6 font-display text-2xl font-medium tracking-tight">{product.name}</h3>
+            <p class="mt-4 flex-auto text-base leading-relaxed text-ink-soft">{product.description}</p>
+            <span class="mt-10 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-colors duration-200 group-hover:text-clay">
+              {hostname(product.href)}
+              <span class="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                ↗
+              </span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
