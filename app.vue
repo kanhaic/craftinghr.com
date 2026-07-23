@@ -61,7 +61,7 @@ const products = [
     name: "EasyHR",
     description:
       "Easy HR is simple & intuitive HR Software for SME & Enterprise. It provides HRIS records, leaves & attendance, Payroll, expenses, travel making it very easy to manage.",
-    href: "https://easyhrworld.com",
+    href: "https://easyhr.app",
     logo: "/easyhr-logo.png", // Make sure this path is correct
   },
   {
