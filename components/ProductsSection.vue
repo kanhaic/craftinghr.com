@@ -12,7 +12,7 @@
             <div class="absolute -inset-2">
               <div class="w-full h-full mx-auto opacity-30 blur-lg filter" style="background: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)"></div>
             </div>
-            <div class="relative flex flex-col bg-white py-6 px-6 rounded-lg shadow-md dark:bg-gray-800">
+            <div class="relative flex h-full flex-col bg-white py-6 px-6 rounded-lg shadow-md dark:bg-gray-800">
               <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 dark:text-white">
                 <img :src="product.logo" :alt="product.name" class="h-10" />
                 {{ product.name }}
