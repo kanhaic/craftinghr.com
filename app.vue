@@ -71,6 +71,13 @@ const products = [
     href: "https://eazyroute.app",
     logo: "/eazyroute-logo.png", // Make sure this path is correct
   },
+  {
+    name: "Smart Bills",
+    description:
+      "Smart Bills uses AI to extract invoice data automatically, giving businesses a clear, searchable dashboard with easy reporting and integrations.",
+    href: "https://smartbills.app",
+    logo: "https://smartbills.app/logo.svg",
+  },
 ];
 
 const statsTitle = "Trusted by Enterprises Worldwide";
