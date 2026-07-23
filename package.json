@@ -2,6 +2,9 @@
   "name": "craftinghr",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
